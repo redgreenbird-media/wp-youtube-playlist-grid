@@ -8,6 +8,10 @@
  * Author URI: https://redgreenbird.com
  * License: GPL3
  */
+
+require_once('custom-post-type.php');
+require_once('auto-puller.php');
+
 add_shortcode('youtube_playlist_grid', 'youtube_playlist_grid_shortcode');
 
 function youtube_playlist_grid_shortcode($atts)
@@ -111,11 +115,14 @@ function youtube_playlist_grid_settings_page()
                     </td>
                 </tr>
             </table>
-            <?php submit_button(); ?>
+            <?php submit_button('Save'); ?>
+            <input type="submit" name="pull" value="Pull" class="button-primary">
         </form>
     </div>
+
 <?php
 }
+
 
 
 
